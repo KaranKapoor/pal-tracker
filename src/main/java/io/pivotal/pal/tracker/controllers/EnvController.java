@@ -35,4 +35,9 @@ public class EnvController {
 
         return map;
     }
+
+    @GetMapping("/test")
+    public String getTest() {
+        return "Test";
+    }
 }
