@@ -18,6 +18,7 @@ jobs:
         - git config --local user.name "Travis CI"
         - git config --local user.email "travis@example.com"
         - git tag -f $RELEASE_TAG
+        - echo $RELEASE_TAG
       deploy:
         provider: releases
         api_key: $GITHUB_OAUTH_TOKEN
