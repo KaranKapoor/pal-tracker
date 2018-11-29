@@ -18,7 +18,6 @@ jobs:
         - git config --local user.name "Travis CI"
         - git config --local user.email "travis@example.com"
         - git tag -f $RELEASE_TAG
-        - echo $RELEASE_TAG
       deploy:
         provider: releases
         api_key: $GITHUB_OAUTH_TOKEN
@@ -33,7 +32,7 @@ jobs:
         - echo "Deploying $RELEASE_TAG to review"
       deploy:
         provider: cloudfoundry
-        api: $CF_API_URLreview
+        api: $CF_API_URL
         username: $CF_USERNAME
         password: $CF_PASSWORD
         organization: $CF_ORG
