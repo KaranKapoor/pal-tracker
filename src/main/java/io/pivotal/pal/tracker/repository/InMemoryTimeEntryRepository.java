@@ -8,12 +8,13 @@ import java.util.List;
 import java.util.Map;
 
 public class InMemoryTimeEntryRepository implements ITimeEntryRepository {
+
     private Map<Long, TimeEntry> database = new HashMap<>();
 
-    private long counter = 0;
+    private long idCounter  = 0;
 
     public TimeEntry create(TimeEntry entry) {
-        entry.setId(++counter);
+        entry.setId(++idCounter);
         database.put(entry.getId(), entry);
         return entry;
     }
