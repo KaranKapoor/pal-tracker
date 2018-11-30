@@ -10,6 +10,7 @@ jobs:
   include:
     - stage: build and publish
       language: java
+      cache: bundler
       jdk: oraclejdk8
       addons:
         mariadb: '10.2'
