@@ -11,7 +11,7 @@ public class InMemoryTimeEntryRepository implements ITimeEntryRepository {
 
     private Map<Long, TimeEntry> database = new HashMap<>();
 
-    private long idCounter  = 0;
+    private long idCounter = 0;
 
     public TimeEntry create(TimeEntry entry) {
         entry.setId(++idCounter);
