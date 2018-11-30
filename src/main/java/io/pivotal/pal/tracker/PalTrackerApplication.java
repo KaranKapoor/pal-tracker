@@ -6,13 +6,14 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import io.pivotal.pal.tracker.repository.ITimeEntryRepository;
 import io.pivotal.pal.tracker.repository.InMemoryTimeEntryRepository;
+import io.pivotal.pal.tracker.repository.JdbcTimeEntryRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
-import java.text.DateFormat;
-import java.time.LocalDate;
+import javax.sql.DataSource;
 
 @SpringBootApplication
 public class PalTrackerApplication {
@@ -22,8 +23,10 @@ public class PalTrackerApplication {
     }
 
     @Bean
-    public ITimeEntryRepository timeEntryRepository() {
-        return new InMemoryTimeEntryRepository();
+    public ITimeEntryRepository timeEntryRepository(@Autowired DataSource dataSource) {
+
+        //return new InMemoryTimeEntryRepository();
+        return new JdbcTimeEntryRepository(dataSource);
     }
 
     @Bean
