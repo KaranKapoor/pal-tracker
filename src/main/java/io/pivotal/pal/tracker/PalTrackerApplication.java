@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import de.codecentric.boot.admin.config.EnableAdminServer;
 import io.pivotal.pal.tracker.repository.ITimeEntryRepository;
 import io.pivotal.pal.tracker.repository.InMemoryTimeEntryRepository;
 import io.pivotal.pal.tracker.repository.JdbcTimeEntryRepository;
@@ -16,6 +17,7 @@ import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import javax.sql.DataSource;
 
 @SpringBootApplication
+@EnableAdminServer
 public class PalTrackerApplication {
 
     public static void main(String[] args) {
