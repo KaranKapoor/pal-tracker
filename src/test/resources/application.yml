@@ -1,14 +1,3 @@
-spring:
-  application:
-    name: pal-tracker
-  boot:
-    admin:
-      url: https://pal-tracker-sandbox.apps.pikes.pal.pivotal.io
-      auto-registration: true
-      auto-deregistration: true
-      register-once: true
-      context-path: /admin
-
 https:
   disabled: true
 

@@ -1,4 +1,4 @@
-package test.pivotal.pal.trackerapi;
+package io.pivotal.pal.tracker.security;
 
 import io.pivotal.pal.tracker.PalTrackerApplication;
 import org.junit.Before;
